@@ -4,25 +4,25 @@
 
 ### scanf：标准格式输入
 
-- 头文件：
+- **头文件：**
 
 ```c
 #include <stdio.h>
 ```
 
-- 函数原型为：
+- **函数原型为：**
 
 ```c
 int scanf(const char *format, ...);
 ```
 
-- 参数入口
+- **参数入口**
 
   输入参数**`format`**是一个字符串，用于指定输入的格式，而**`...`**表示可以接受任意数量的变量
 
-- 注意：**当`scanf`从缓冲区读取数据时遇到空格和回车键则会认为读取完毕**
+- **注意：** **当`scanf`从缓冲区读取数据时遇到空格和回车键则会认为读取完毕**
 
-- 用例与运行结果
+- **用例与运行结果：**
 
 用例1：读取数字
 
@@ -155,21 +155,23 @@ int main(){
 
   `char *__cdecl strtok(char *_String, const char *_Delimiter)`
 
-- 解释：
+- **解释：**
 
   **`strtok()`函数**接收**两个传入参数**，将**`_String`**中保存的**字符串（待处理字符串）**，按照**`_Delimiter`**中的字符作为**分隔符**进行**分割**。如果**`_String`**为空，则**函数内部**保存的**`SAVE_PTR`指针**在**下一次调用中将作为起始位置**。
 
-- 注意：
+- **注意：**
 
   第一个传入参数**`_String`**定义为**`char`**而不是**`const char\*`**，就说明**`strtok()`函数不保证不修改传入数据的内容**。实际上，**第一个参数`_String`传进来的字符串，是会被`strtok()`函数所修改的**，因此调用`strtok()`函数的时候应当注意。
 
 #### `strtok_s`：strtok安全函数版本
 
-- 函数原型：`char *__cdecl strtok_s(char *_String, const char *_Delimiter, char **_Context)`
+- **函数原型：**
+
+  `char *__cdecl strtok_s(char *_String, const char *_Delimiter, char **_Context)`
 
 `strtok_s()`函数增加了一个参数**`_Context`**，这个参数就是**相当于`strtok()`函数中内部定义的静态`SAVE_PTR`指针**，用来传递对字符串`_String`的处理进行到了哪里
 
-- 使用例子：
+- **使用例子：**
 
 ```c
 #include <stdio.h>
